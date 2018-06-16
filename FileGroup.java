@@ -7,8 +7,6 @@ public class FileGroup {
 
 	private String title;
 
-	private List<File> files;
-
 	private List<FileGroup> fileGroups;
 
 	private FileGroup fileGroupParent;
@@ -17,14 +15,12 @@ public class FileGroup {
 
 	public FileGroup(String title) {
 		this.title = title;
-		this.files = new ArrayList<>();
 		this.fileGroups = new ArrayList<>();
 		this.fileGroupParent = null;
 	}
 
 	public FileGroup(String title, FileGroup fileGroupParent) {
 		this.title = title;
-		this.files = new ArrayList<>();
 		this.fileGroups = new ArrayList<>();
 		this.fileGroupParent = fileGroupParent;
 	}
@@ -43,14 +39,6 @@ public class FileGroup {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public List<File> getFiles() {
-		return files;
-	}
-
-	public void setFiles(List<File> files) {
-		this.files = files;
 	}
 
 	public List<FileGroup> getFileGroups() {
@@ -79,18 +67,11 @@ public class FileGroup {
 	    return (otherFileGroup.id == this.id);
 	}
 
-	public void updateFileIndexOrder (){
-		int i = 0;
-		for (File f : this.getFiles()){
-			f.setIndexOrder(i);
-			i++;
-		}
-	}
 
 	@Override
 	public String toString() {
 		String parent = this.fileGroupParent != null ? this.fileGroupParent.getTitle() : "null";
-		return "FileGroup[title: \"" + this.title + "\", parentFileGroup: \"" + parent + "\", #files: " + this.files.size() + ", #childrenFileGroups: " + this.fileGroups.size() + "]";
+		return "FileGroup[title: \"" + this.title + "\", parentFileGroup: \", #childrenFileGroups: " + this.fileGroups.size() + "]";
 	}
 
 }

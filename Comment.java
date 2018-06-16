@@ -18,22 +18,18 @@ public class Comment {
 
 	private Comment commentParent;
 
-	private User user;
-
 	public Comment() {}
 
-	public Comment(String message, long date, User user) {
+	public Comment(String message, long date) {
 		this.message = message;
 		this.date = date;
-		this.user = user;
 		this.replies = new ArrayList<Comment>();
 		this.commentParent = null;
 	}
 
-	public Comment(String message, long date, User user, Comment commentParent) {
+	public Comment(String message, long date, Comment commentParent) {
 		this.message = message;
 		this.date = date;
-		this.user = user;
 		this.replies = new ArrayList<Comment>();
 		this.commentParent = commentParent;
 	}
@@ -86,14 +82,6 @@ public class Comment {
 		this.replies = replies;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	public Comment getCommentParent() {
 		return commentParent;
 	}
@@ -105,9 +93,8 @@ public class Comment {
 	@Override
 	public String toString() {
 		String parent = this.commentParent != null ? commentParent.message : "null";
-		String user = this.user != null ? this.user.getNickName() : "";
 		int nReplies = this.replies != null ? this.replies.size() : 0;
-		return "Comment[message: \"" + this.message + "\", author: \"" + user + "\", parent: \"" + parent + "\", #replies: " + nReplies + "date: \"" + this.date + "\"]";
+		return "Comment[message: \"" + this.message + "\", parent: \"" + parent + "\", #replies: " + nReplies + "date: \"" + this.date + "\"]";
 	}
 
 }

@@ -9,17 +9,11 @@ public class Entry {
 
 	private long date;
 
-	private List<Comment> comments;
-
-	private User user;
-
 	public Entry() {}
 
-	public Entry(String title, long date, User user) {
+	public Entry(String title, long date) {
 		this.title = title;
 		this.date = date;
-		this.user = user;
-		this.comments = new ArrayList<>();
 	}
 
 	public long getId() {
@@ -46,25 +40,9 @@ public class Entry {
 		this.date = date;
 	}
 
-	public List<Comment> getComments() {
-		return comments;
-	}
-
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	@Override
 	public String toString() {
-		return "Entry[title: \"" + this.title + "\", author: \"" + user.getNickName() + "\", date: " + this.date + ", #comments: " + this.comments.size() + "]";
+		return "Entry[title: \"" + this.title + "\", date: " + this.date + "]";
 	}
 
 }

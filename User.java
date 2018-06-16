@@ -22,7 +22,6 @@ public class User {
 
 	//It is ignored in order to avoid infinite recursiveness
 	//This makes necessary another interaction with the database (after login to retrieve the courses of the user)
-	private Set<Course> courses;
 
 	public User() {}
 
@@ -38,7 +37,6 @@ public class User {
 			this.picture = "/../assets/images/default_session_image.png";
 		}
 		this.registrationDate = System.currentTimeMillis();
-		this.courses = new HashSet<>();
 	}
 
 	public Long getId() {
@@ -95,14 +93,6 @@ public class User {
 
 	public void setRegistrationDate(long registrationDate) {
 		this.registrationDate = registrationDate;
-	}
-
-	public Set<Course> getCourses() {
-		return courses;
-	}
-
-	public void setCourses(Set<Course> courses) {
-		this.courses = courses;
 	}
 
 	@Override

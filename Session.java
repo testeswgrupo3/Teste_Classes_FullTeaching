@@ -10,22 +10,12 @@ public class Session {
 
 	private long date;
 
-	private Course course;
-
 	public Session() {}
 
 	public Session(String title, String description, long date) {
 		this.title = title;
 		this.description = description;
 		this.date = date;
-		this.course = null;
-	}
-
-	public Session(String title, String description, long date, Course course) {
-		this.title = title;
-		this.description = description;
-		this.date = date;
-		this.course = course;
 	}
 
 	public long getId() {
@@ -58,14 +48,6 @@ public class Session {
 
 	public void setDate(long date) {
 		this.date = date;
-	}
-
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
 	}
 
 	//To make 'course.getSessions().remove(session)' possible
