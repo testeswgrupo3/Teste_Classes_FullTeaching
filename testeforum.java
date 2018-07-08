@@ -3,47 +3,29 @@ import org.junit.*;
 
 public class testeforum {
 
-  String id;
-  String activated;
-  Forum forum;
-
-  @Before
-  public void before(){
-    forum = new (activated);
-  }
-
   @Test
-  public void testaAtivacao()
+  public void testaAtivacaoForum()
   {
-    assertNotEquals("Ativação",null,forum.getActivated().length());
-  }
-
-  @Test
-  public void testaForum()
-  {
-     Forum f1 = new Forum(activated);
-     forum.setActivated("true");
-     forum.setActivated("false");
-     assertEquals("Mesmo forum ativado com falso e verdadeiro ", forum.equals(forum));
+     Forum f1 = new Forum(false);
+     f1.setActivated(true);
+     assertTrue("Não foi possível ativar o forum", f1.isActivated());
 
   }
 
   @Test
-  public void testaInstancias(){
-    Forum f2 = new Forum("true","true");
-    Forum f3 = new Forum("falso","falso");
-    f2.setActivated("true");
-    f3.setActivated("falso");
-    assertEquals("Forum diferente ativados ao mesmo tempo",f2.getActivated(),f3.getActivated());
+  public void testaMultiplosForums(){
+    Forum f2 = new Forum(true);
+    Forum f3 = new Forum(true);
+    assertTrue("Forum não foi ativado",f2.isActivated());
+    assertTrue("Forum não foi ativado",f3.isActivated());
 
   }
 
   @Test
   public void variaveisIniciais(){
-      Course f1 = new Forum(activated);
-      assertEquals("Ativação do forum incorreta", f1.getActivated(),activated);
-
-
-
-
+      Forum f1 = new Forum(true);
+      assertEquals("Falha ao criar forum ativado",true, f1.isActivated());
+      Forum f2 = new Forum(false);
+      assertEquals("Falha ao criar forum desativado",false, f1.isActivated());
+  }
 }
