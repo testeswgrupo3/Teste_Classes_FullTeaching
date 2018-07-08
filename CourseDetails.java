@@ -10,11 +10,7 @@ public class CourseDetails {
 	public CourseDetails() {
 		this.info = "";
 	}
-
-	public CourseDetails(Course course) {
-		this.info = "";
-	}
-
+	
 	public long getId() {
 		return id;
 	}
