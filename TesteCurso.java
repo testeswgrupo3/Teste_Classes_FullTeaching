@@ -17,15 +17,17 @@ public class TesteCurso {
 
   @Test
   public void testaComparacao(){
-      Course c2 = new Course(nome,imagem);
-      c.setId(1);
+      Course c2 = new Course("c2","img2");
+      Course c3 = new Course("c3","img3");
       c2.setId(2);
-      assertTrue("Cursos iguas dando diferente",c.equals(c));
-      assertFalse("Cursos difentes dando iguais",c.equals(c2));
+      c3.setId(3);
+
+      assertTrue("Cursos iguas dando diferente",c2.equals(c2));
+      assertFalse("Cursos difentes dando iguais",c2.equals(c3));
   }
 
   @Test
-  public void variaveisIniciais(){
+  public void testaConstrutores(){
       Course c2 = new Course(nome,imagem);
       assertEquals("Titulo do curso incorreto",c2.getTitle(),nome);
       assertEquals("Imagem do curso incorreta",c2.getImage(),imagem);
@@ -41,7 +43,6 @@ public class TesteCurso {
       c.setImage(novaImagen);
       assertEquals("Titulo do curso incorreto",c.getTitle(),novoTitulo);
       assertEquals("Imagem do curso incorreta",c.getImage(),novaImagen);
-      assertEquals("Id do curso incorreto",c.getId(),1);
       assertEquals("Id do curso incorreto",c.getId(),1);
   }
 
