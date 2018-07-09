@@ -18,11 +18,13 @@ public class TesteCurso {
   @Test
   public void testaComparacao(){
       Course c2 = new Course("c2","img2");
+      Course cAux = new Course("c2","img2");
       Course c3 = new Course("c3","img3");
       c2.setId(2);
+      cAux.setId(2);
       c3.setId(3);
 
-      assertTrue("Cursos iguas dando diferente",c2.equals(c2));
+      assertTrue("Cursos iguas dando diferente",c2.equals(cAux));
       assertFalse("Cursos difentes dando iguais",c2.equals(c3));
   }
 
