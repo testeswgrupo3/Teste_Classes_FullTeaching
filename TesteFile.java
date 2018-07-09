@@ -61,8 +61,8 @@ public class TesteFile{
       fAux.setId(2);
       f2.setId(3);
 
-      assertTrue("Cursos iguas dando diferente",f.equals(fAux));
-      assertFalse("Cursos difentes dando iguais",f.equals(f2));
+      assertTrue("Files iguas dando diferente",f.equals(fAux));
+      assertFalse("Files difentes dando iguais",f.equals(f2));
   }
 
   @Test
